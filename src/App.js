@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Weather from './components/Weather';
+import SearchBar from './components/SearchBar';
+import DarkModeToggle from './components/DarkModeToggle';
 import './App.css';
 
-function App() {
+const App = () => {
+
+  const [darkMode, setDarkMode] = useState(false);
+  const [locations, setLocations] = useState([]);
+
+  const addLocation = (location) => {
+    setLocations([...locations, location]);
+  };
+
+  const removeLocation = (index) => {
+    const updatedLocations = [...locations];
+    updatedLocations.splice(index, 1);
+    setLocations(updatedLocations);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className={`app ${darkMode ? 'dark-mode' : 'light-mode'}`}>
+      <header>
+        <h1>Weather App</h1>
+        <DarkModeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
       </header>
+      <main>
+        <SearchBar onSearch={addLocation} />
+        <Weather locations={locations} removeLocation={removeLocation} />
+      </main>
     </div>
   );
 }

@@ -1,0 +1,50 @@
+.weather-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.weather-card{
+    border: solid 1px #fff;
+    background-color: #00000026;
+    width: 30%;
+    padding: 10px;
+    margin: 5px;
+    box-shadow: 0px 0px 6px 2px;
+}
+
+.remove-button{
+    background-color: #ff3131;
+    color: #fff;
+    font-weight: bold;
+}
+
+.remove-button:hover{
+    background-color: #d74141;
+}
+h2{
+    font-size: 40px;
+    font-weight: 900;
+}
+
+@media (max-width: 600px){
+    .weather-container{
+        flex-direction: column;
+    }
+    .weather-card{
+        width: 90%;
+    }
+    
+}
+
+@media (min-width: 601px) and (max-width: 968px){
+    h2{
+        font-size: 30px;
+    }
+    p{
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,38 +1,71 @@
-.App {
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.app {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  padding: 20px;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-size: contain;
+}
+
+.dark-mode {
+  background-image: url("assets/animated-nightt-847060c0-1d4f-46bf-a586-258ff49aa6b0.png");
+  background-size: cover;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.light-mode{
+  background-image: url("assets/Firefly-animated-weather-app-background-day-time-image-in-size-of-16935669.jpg");
+  background-size: cover;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main {
+  margin-top: 20px;
+}
+
+button{
+  padding: 10px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+img{
+  aspect-ratio: 3 / 2;
+  height: 40px;
+  object-fit: contain;
+  min-width: 40px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+span{
+  font-weight: bold;
+}
+@media (max-width: 600px) {
+  .app {
+    padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  header {
+    flex-direction: row;
+    justify-content: space-between;
   }
+  header h1{
+    min-width: 80%;
+    text-align: left;
+  }
+
+  main {
+    margin-top: 10px;
+  }
+
 }
